@@ -1,8 +1,8 @@
 import random
-from colorama import Fore
-from colorama import Style
+from colorama import Fore,Style
 
 print(Fore.CYAN,'Welcome to the game,Maybe today will be your day!?',Style.RESET_ALL)
+print('------------------------------------------')
 white_ball = []
 strong_number = []
 
@@ -14,7 +14,7 @@ def WhiteBall():
             white_ball.append(x)
     for i in range(1):
         strong_number.append(random.randrange(1, 11))
-    print('your lucky numbers:\n', Fore.GREEN + f' {sorted(white_ball)}', Style.RESET_ALL,
+    print(Fore.GREEN,f'your lucky numbers:\n',Style.RESET_ALL, Fore.MAGENTA + f' {sorted(white_ball)}', Style.RESET_ALL,
           Fore.YELLOW + f'{strong_number}', Style.RESET_ALL)
 
 
@@ -29,7 +29,7 @@ def Ballwin():
             win_ball.append(x)
     for i in range(1):
         win_strong.append(random.randrange(1, 11))
-    print('today’s Powerball winning numbers:\n', Fore.GREEN + f'{sorted(win_ball)}', Style.RESET_ALL, Fore.YELLOW,
+    print(Fore.GREEN,f'today’s Powerball winning numbers:\n',Style.RESET_ALL, Fore.MAGENTA + f'{sorted(win_ball)}', Style.RESET_ALL, Fore.YELLOW,
           f'{win_strong}', Style.RESET_ALL)
 
 
@@ -62,8 +62,9 @@ def Identical():
     elif strong_number == win_strong:
         print(Fore.RED,'only strong number you won in: 1$',Style.RESET_ALL)
     else:
-        print(Fore.RED,'try again',Style.RESET_ALL)
+        print(Fore.RED,'You did not catch anything, try again',Style.RESET_ALL)
 
 
 print(Fore.BLACK,'----------------------------------',Style.RESET_ALL)
 Identical()
+print(Fore.BLACK,'----------------------------------',Style.RESET_ALL)
